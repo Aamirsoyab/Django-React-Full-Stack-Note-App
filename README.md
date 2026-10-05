@@ -355,6 +355,8 @@ Feel free to fork and submit a pull request.
 This project is open-source and available under the MIT License.
 
 ## Author
-Aamir Soyab
 
-GitHub: @Aamirsoyab
+**Aamir Soyab**
+
+GitHub: [@Aamirsoyab](https://github.com/Aamirsoyab)
+
