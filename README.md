@@ -277,38 +277,50 @@ Production CORS configuration
 
 Proper secret/environment management
 
- ##Application Flow
+ #### Application Flow
 
-React Frontend
-      │
-      │ Axios HTTP Requests
-      ▼
-Django REST API
-      │
-      │ JWT Authentication
-      ▼
-Django Authentication
-      │
-      ▼
-SQL Server Database
+```text
+Django-React-Full-Stack-Note-App/
+│
+├── React Frontend
+│   │
+│   └── Axios HTTP Requests
+│           │
+│           ▼
+├── Django REST API
+│   │
+│   └── JWT Authentication
+│           │
+│           ▼
+├── Django Authentication
+│   │
+│   ▼
+└── SQL Server Database
+```
 
-## Authentication Flow
+### Authentication Flow
 
+```text
 User
- │
- ├── Register
- │       ↓
- │   Django API
- │
- ├── Login
- │       ↓
- │   JWT Access + Refresh Tokens
- │
- └── Authenticated Requests
-         ↓
-      Notes API
-         ↓
+│
+├── Register
+│   │
+│   ▼
+│   Django API
+│
+├── Login
+│   │
+│   ▼
+│   JWT Access + Refresh Tokens
+│
+└── Authenticated Requests
+    │
+    ▼
+    Notes API
+    │
+    ▼
     User's Notes
+```
 
 ## API Permissions
 
