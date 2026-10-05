@@ -47,35 +47,55 @@ A full-stack note-taking application built with **Django REST Framework** (backe
 
 Project Structure
 
-project/
+## 📁 Project Structure
+
+```text
+Django-React-Full-Stack-Note-App/
 │
-├── backend/
-│   ├── settings.py
-│   ├── urls.py
-│   ├── asgi.py
-│   └── wsgi.py
+├── backend/                          # Django backend
+│   ├── api/                          # API application
+│   │   ├── migrations/
+│   │   ├── models.py                 # Note model
+│   │   ├── serializers.py            # User & Note serializers
+│   │   ├── urls.py                   # API routes
+│   │   └── views.py                  # API views
+│   │
+│   ├── backend/                      # Django project configuration
+│   │   ├── settings.py
+│   │   └── urls.py
+│   │
+│   ├── .env                          # Environment variables (gitignored)
+│   ├── manage.py
+│   └── requirements.txt
 │
-├── api/
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── serializers.py
-│   ├── views.py
-│   ├── urls.py
-│   └── tests.py
-│
-├── frontend/
+├── frontend/                         # React frontend
 │   ├── src/
-│   ├── public/
-│   ├── index.html
+│   │   ├── assets/
+│   │   │
+│   │   ├── components/               # Reusable components
+│   │   │   ├── Form.jsx
+│   │   │   ├── LoadingIndicator.jsx
+│   │   │   ├── Note.jsx
+│   │   │   └── ProtectedRoute.jsx
+│   │   │
+│   │   ├── pages/                    # Application pages
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   └── NotFound.jsx
+│   │   │
+│   │   ├── styles/
+│   │   ├── api.js                    # Axios API configuration
+│   │   ├── constants.js              # Token key constants
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── .env                          # Frontend environment variables (gitignored)
 │   ├── package.json
-│   ├── package-lock.json
 │   └── vite.config.js
 │
-├── manage.py
-├── requirements.txt
-├── Procfile
-└── README.md
+└── .gitignore
+```
 
 ---
 
