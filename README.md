@@ -45,45 +45,37 @@ A full-stack note-taking application built with **Django REST Framework** (backe
 
 ---
 
-## Project Structure
-Django-React-Full-Stack-Note-App/
-├── backend/ # Django backend
-│ ├── api/ # API app
-│ │ ├── migrations/
-│ │ ├── models.py # Note model
-│ │ ├── serializers.py # User & Note serializers
-│ │ ├── urls.py # API routes
-│ │ └── views.py # API views
-│ ├── backend/ # Project config
-│ │ ├── settings.py
-│ │ └── urls.py
-│ ├── .env # Environment variables (gitignored)
-│ ├── manage.py
-│ └── requirements.txt
+Project Structure
+
+project/
 │
-├── frontend/ # React frontend
-│ ├── src/
-│ │ ├── assets/
-│ │ ├── components/ # Reusable components
-│ │ │ ├── Form.jsx
-│ │ │ ├── LoadingIndicator.jsx
-│ │ │ ├── Note.jsx
-│ │ │ └── ProtectedRoute.jsx
-│ │ ├── pages/ # Route pages
-│ │ │ ├── Home.jsx
-│ │ │ ├── Login.jsx
-│ │ │ ├── Register.jsx
-│ │ │ └── NotFound.jsx
-│ │ ├── styles/
-│ │ ├── api.js # Axios instance
-│ │ ├── constants.js # Token key constants
-│ │ ├── App.jsx
-│ │ └── main.jsx
-│ ├── .env # Frontend env vars (gitignored)
-│ ├── package.json
-│ └── vite.config.js
+├── backend/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
 │
-└── .gitignore
+├── api/
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   ├── urls.py
+│   └── tests.py
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
+│
+├── manage.py
+├── requirements.txt
+├── Procfile
+└── README.md
 
 ---
 
