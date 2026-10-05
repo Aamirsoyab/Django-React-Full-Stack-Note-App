@@ -339,17 +339,21 @@ python manage.py test
 ## Screenshots
 Screenshots coming soon...
 
-## Future Improvements
-□ Edit / update notes
-□ Note categories / tags
-□ Search & filter notes
-□ Markdown support for notes
-□ Dark mode
-□ User profile page
-□ Deployment on Railway / Render
-Contributing
+## ## Future Improvements
+
+- [ ] Edit / update notes
+- [ ] Note categories / tags
+- [ ] Search & filter notes
+- [ ] Markdown support for notes
+- [ ] Dark mode
+- [ ] User profile page
+- [ ] Deployment on Railway / Render
+
+## Contributing
+
 Contributions, issues, and feature requests are welcome.
-Feel free to fork and submit a pull request.
+
+Feel free to fork the repository and submit a pull request.
 
 ## License
 This project is open-source and available under the MIT License.
