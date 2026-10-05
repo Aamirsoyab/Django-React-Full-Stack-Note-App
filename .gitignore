@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Environment
+.env
+
+# Django
+*.log
+*.pot
+media/
+staticfiles/
+db.sqlite3
+
+# Choreo
+.choreo/
+
+# Node / React
+node_modules/
+dist/
+build/
+.vite/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
