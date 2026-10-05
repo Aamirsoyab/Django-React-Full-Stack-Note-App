@@ -10,6 +10,12 @@ A full-stack note-taking application built with **Django REST Framework** (backe
 
 ---
 
+##Full-Stack Notes Application
+
+A full-stack notes application built with React + Vite on the frontend and Django REST Framework on the backend.
+
+The application uses JWT authentication to securely authenticate users and provides protected API endpoints for creating, viewing, and deleting personal notes.
+
 ## Features
 
 - JWT Authentication - Secure login & registration with access + refresh tokens
@@ -42,6 +48,7 @@ A full-stack note-taking application built with **Django REST Framework** (backe
 
 ### Database
 - Microsoft SQL Server 2022
+- Database: MyDjangoDB
 
 ---
 
@@ -98,6 +105,69 @@ Django-React-Full-Stack-Note-App/
 ```
 
 ---
+##Authentication
+
+The backend uses JWT authentication through Django REST Framework Simple JWT.
+
+## Register a User
+
+POST /api/user/register/
+
+Example request:
+
+{
+  "username": "john",
+  "email": "john@example.com",
+  "password": "yourpassword"
+}
+
+## Obtain JWT Tokens
+
+POST /api/token/
+
+Example:
+
+{
+  "username": "john",
+  "password": "yourpassword"
+}
+
+The response provides an access token and refresh token.
+
+## Refresh Token
+
+POST /api/token/refresh/
+
+Use the refresh token to obtain a new access token.
+
+## Notes API
+
+Notes belong to the authenticated user.
+
+## Get Notes
+
+GET /api/notes/
+
+Returns the notes belonging to the currently authenticated user.
+
+## Create a Note
+
+POST /api/notes/
+
+Example:
+
+{
+  "title": "My First Note",
+  "content": "This is my first note."
+}
+
+The authenticated user is automatically assigned as the note author.
+
+## Delete a Note
+
+DELETE /api/notes/delete/<id>/
+
+A user can only delete their own notes.
 
 ## Getting Started
 
@@ -171,7 +241,8 @@ POST	/api/token/refresh/	Refresh access token	No
 GET	/api/notes/	List user's notes	Yes
 POST	/api/notes/	Create a new note	Yes
 DELETE	/api/notes/delete/<id>/	Delete a note by ID	Yes
-Authentication Flow
+
+## Authentication Flow
 User registers at /register and sends request to /api/user/register/
 
 User logs in at /login and sends request to /api/token/
@@ -184,10 +255,79 @@ If access token expires, ProtectedRoute auto-refreshes via /api/token/refresh/
 
 Logout clears localStorage and redirects to /login
 
-Screenshots
+## Security Notes
+
+Do not commit sensitive credentials or secret keys to Git.
+
+Keep database credentials and other environment-specific configuration inside .env files and make sure they are excluded from version control.
+
+For production deployment, configure:
+
+A secure Django SECRET_KEY
+
+DEBUG=False
+
+Restricted ALLOWED_HOSTS
+
+Secure database credentials
+
+HTTPS
+
+Production CORS configuration
+
+Proper secret/environment management
+
+ ##Application Flow
+
+React Frontend
+      │
+      │ Axios HTTP Requests
+      ▼
+Django REST API
+      │
+      │ JWT Authentication
+      ▼
+Django Authentication
+      │
+      ▼
+SQL Server Database
+
+## Authentication Flow
+
+User
+ │
+ ├── Register
+ │       ↓
+ │   Django API
+ │
+ ├── Login
+ │       ↓
+ │   JWT Access + Refresh Tokens
+ │
+ └── Authenticated Requests
+         ↓
+      Notes API
+         ↓
+    User's Notes
+
+## API Permissions
+
+The notes endpoints require an authenticated user.
+
+Each user's notes are filtered using the authenticated user, ensuring that users retrieve and manage their own notes rather than other users' notes.
+
+The Note model associates every note with a Django user through a foreign-key relationship.
+
+## Testing
+
+Run Django's test suite with:
+
+python manage.py test
+
+## Screenshots
 Screenshots coming soon...
 
-Future Improvements
+## Future Improvements
 □ Edit / update notes
 □ Note categories / tags
 □ Search & filter notes
@@ -199,10 +339,10 @@ Contributing
 Contributions, issues, and feature requests are welcome.
 Feel free to fork and submit a pull request.
 
-License
+## License
 This project is open-source and available under the MIT License.
 
-Author
+## Author
 Aamir Soyab
 
 GitHub: @Aamirsoyab
