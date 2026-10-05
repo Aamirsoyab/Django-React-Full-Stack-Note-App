@@ -54,7 +54,7 @@ The application uses JWT authentication to securely authenticate users and provi
 
 Project Structure
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 Django-React-Full-Stack-Note-App/
